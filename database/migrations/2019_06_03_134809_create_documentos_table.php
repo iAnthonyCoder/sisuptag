@@ -35,7 +35,9 @@ class CreateDocumentosTable extends Migration
             ->onDelete('restrict')
             ->onUpdate('cascade');
         });
-        DB::statement("ALTER TABLE documentos ADD pdf MEDIUMBLOB");
+       ;
+        DB::statement("ALTER TABLE documentos ADD COLUMN pdf BYTEA");
+        //DB::statement("ALTER TABLE documentos ADD pdf MEDIUMBLOB");
     }
 
     /**
